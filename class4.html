@@ -60,53 +60,35 @@
                 </section>
 
                 <section>
-                  <h3>HW: English Numbers</h3>
-                  <p>You could expand the EnglishNumbers program by adding the following code to deal with thousands:</p>
+                  <h3>HW: Separate Commas</h3>
+                  <p></p>
                   <pre><code class="ruby">
-left  = number  #original code, set 'left' variable
-
-write = left/1000          #  How many thousands left to write out?
-left  = left - write*1000  #  Subtract off those thousands.
-
-if write > 0
-  thousands  = englishNumber write
-  numString = numString + thousands + ' thousand'
-
-  if left > 0
-    numString = numString + ' '
-  end
+def separate_comma(num)
+  num= num.to_s.split('').reverse
+  length =num.length
+ (4..length).step(3) { |x| num[x] += ","}
+  return num.join
 end
-
-write = left/100 # this line begins the existing code that deals with hundreds
                   </code></pre>
                 </section>
 
                 <section>
-                  <h3>HW: Wedding Numbers</h3>
-                  <p>You could modify the code in the EnglishNumbers program to make it WeddingNumbers by replacing some of the added spaces with added 'and's and spaces: </p>
+                  <h3>HW: Averages</h3>
+                  <p></p>
                   <pre><code class="ruby">
-# numString = numString + ' '   # old code
-
-numString = numString + ' and '
+def average(numbers)
+    total = 0
+    numbers.each do |number|
+       total += number
+    end
+    length = numbers.length
+    average = total/length
+    average
+end
                    </code></pre>
                 </section>
 
-                <section>
-                  <h3>HW: 99 Bottles of Beer</h3>
-                  <p>You could modify the code for 99 Bottles of Beer shown in Class2 to include the functionality in the EnglishNumber class: </p>
-                  <pre><code class="ruby">
-require_relative 'englishnumber.rb' 
-num_bottles = 999
-
-while num_bottles > 0
-  puts "#{englishNumber(num_bottles)} bottles of beer on the wall, 
-  #{englishNumber(num_bottles)} bottles of beer, take one down, pass it 
-  around, #{englishNumber(num_bottles - 1)} bottles of beer on the wall!"
-
-  num_bottles = num_bottles - 1
-end 
-                   </code></pre>
-                </section>
+                
 
                 <section>
                     <h3>Review</h3>
